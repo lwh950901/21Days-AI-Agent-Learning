@@ -9,7 +9,7 @@
 | 模块 | 主题 | 天数 | 状态 |
 | --- | --- | --- | --- |
 | 1 | **LLM 与 AI SDK 核心基础** | Day 1-2 | ✅ 已完成 |
-| 2 | Structured Output 与 Tool Calling | Day 3-4 | ⬜ 未开始 |
+| 2 | Structured Output 与 Tool Calling | Day 3-4 | ✅ 已完成 |
 | 3 | Workflow、Agent 与 LangGraph | Day 5-7 | ⬜ 未开始 |
 | 4 | State、Persistence、Checkpoint、HITL | Day 8-9 | ⬜ 未开始 |
 | 5 | RAG 工程 | Day 10-12 | ⬜ 未开始 |
@@ -64,3 +64,44 @@
 3. **无状态与上下文管理**：模型不自动记忆，应用层通过 chatId + history 管理多轮对话
 4. **错误、停止与状态**：状态机驱动，停止中断请求而非再发 prompt，错误分场景处理
 5. **模型切换与成本**：抽象 fast/quality/cheap 配置层，按成本、延迟、质量灵活切换
+
+---
+
+## 模块 2 完成概要 ✅
+
+> 📄 [完整学习归档](module-2.md) · [一页纸速记版](module-2-fast.md) · 💻 [Structured Output Demo](demo2/) · [Tool Calling Demo](demo3/)
+
+### 学习内容
+
+**Structured Output**
+- Zod Schema → AI SDK 转成模型可理解的结构约束 → 模型按结构生成 → 校验 → 前端消费
+- `Output.object({ schema })` vs `json_object` 兼容模式：DeepSeek 不支持 `json_schema`，需降级为 `response_format: json_object` + prompt 内嵌格式 + Zod 后端校验
+- 关键思维：Structured Output 解决"输出能否被系统稳定消费"，不保证内容质量
+- `confidence` 字段体现工程意识：模型不确定性可量化，前端据此决定是否需要人工介入
+
+**Tool Calling**
+- AI SDK `tool()` + `inputSchema` + `execute`：模型决策、后端执行、副作用受控
+- 只读工具（searchCompetitors）vs 业务工具（saveProject）：`risk: "readonly" | "business"`
+- `stopWhen: stepCountIs(N)` 控制最大工具调用步数
+- 工具调用日志：每次调用记录 toolName、risk、status、input、result
+- 工具错误处理：模拟 timeout / save fail，错误收敛到业务提示
+
+**Provider 兼容踩坑**
+- DeepSeek 不支持 `response_format: json_schema` → `json_object` + prompt 格式说明
+- `Output.object({ schema })` 不兼容 → 手动 `JSON.parse` + Zod `parse`
+- `maxOutputTokens` 太小导致 JSON 截断 → 不设限制或设足够大
+- reasoning model 超时 → 用 fast 模型 + 合理 timeout
+
+### 代码产出
+
+| Demo | 路径 | 核心能力 |
+| --- | --- | --- |
+| Structured Output | [demo2/](demo2/) | Zod ProductBrief · `json_object` 兼容 · 前端可编辑表单 · confidence 展示 |
+| Tool Calling | [demo3/](demo3/) | `searchCompetitors` + `saveProject` · 工具日志 · 错误展示 · 白名单约束 |
+
+### 面试表达
+
+1. **Structured Output**：不是让模型"格式更好"，而是让下游代码可稳定消费。Zod 定义契约，模型生成，SDK/后端校验，三者各司其职
+2. **Tool Calling**：模型是决策者不是执行者。后端提供白名单、校验参数、执行副作用、记录日志，模型只在白名单中选择
+3. **Provider 兼容**：不同 provider 对 structured output / tool calling 的支持不同，需要降级策略。DeepSeek 不支持 `json_schema`，切为 `json_object` + prompt 配合
+4. **工具风险分级**：readonly 工具可自动调用，business 工具需确认或限制频率，日志记录所有调用链
