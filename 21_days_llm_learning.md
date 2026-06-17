@@ -5,8 +5,8 @@
 - 周期：21 天
 - 每日投入：约 6 小时
 - 求职目标：20k+ AI 应用开发岗位机会
-- 当前日期：2026-06-13
-- 当前阶段：第 1 天，模块 1
+- 当前日期：2026-06-17
+- 当前阶段：Day 4 已完成，准备进入模块 5
 - 台账原则：这里只管理进度、产出、验收与方向，不展开具体技术讲解
 
 ## 台账目录索引
@@ -63,6 +63,19 @@
 - 不替代项目代码窗口、课程学习窗口或技术答疑窗口。
 - 不在缺少运行证明时把代码产出视为完成。
 
+## 学习窗口统一教学规则
+
+后续模块学习窗口统一参考 Teach skill 的教学方式，但不机械扩写成复杂文档体系：
+
+- 每个小节只围绕一个可完成的小目标，形成一个小胜利。
+- 先说明该知识点与 20k+ AI 应用开发求职、可运行 Demo、项目表达、面试表达的关系。
+- 控制单次信息量：最小必要知识 -> 小练习 -> 代码落点 -> 面试表达。
+- 不因“刚听懂”就判定掌握；仍按代码、运行、练习、总结、面试题验收。
+- 后续模块必须增加理解验收：用户能用自己的话解释核心概念、判断适用场景、说清常见误区、完成小练习或代码修改，才算理解通过。
+- 如果用户解释含糊、只能复述术语、不能结合项目说明，模块状态保持学习中或待回补，不标记完成。
+- 每节结束沉淀掌握点、易错点、待回补点和下一步。
+- 涉及具体 API 时优先使用官方文档或当前代码验证。
+
 ## 原始职责覆盖检查表
 
 | 职责 | 台账位置 | 当前覆盖状态 |
@@ -84,14 +97,14 @@
 
 | 指标 | 当前值 | 说明 |
 | --- | --- | --- |
-| 当前天数 | Day 2 / 21 | 模块 2 已完成，准备进入模块 3 |
-| 当前模块 | 模块 3：Workflow、Agent、LangGraph 与 Multi-Agent | 下一步进入 |
-| 已完成模块 | 2 / 9 | 模块 1、模块 2 已通过完整验收 |
+| 当前天数 | Day 4 / 21 | 模块 4 已完成，准备进入模块 5 |
+| 当前模块 | 模块 5：RAG 工程（Chunking、向量库、Hybrid Search） | 下一步进入 |
+| 已完成模块 | 4 / 9 | 模块 1、模块 2、模块 3、模块 4 已通过完整验收 |
 | 学习中模块 | 0 / 9 | 暂无 |
 | 待验收模块 | 0 / 9 | 暂无 |
-| 已完成日复盘 | 2 / 21 | Day 1、Day 2 已复盘 |
-| 当前最关键阻塞 | 模块 3 尚未开始 | 下一步进入 Workflow、Agent 与 LangGraph |
-| 求职资产完成度 | 模块 1 基础 Demo、模块 2 结构化输出与工具调用 Demo 已完成 | 继续沉淀模块 3 可控 Workflow 能力 |
+| 已完成日复盘 | 4 / 21 | Day 1、Day 2、Day 3、Day 4 已复盘 |
+| 当前最关键阻塞 | 模块 5 尚未开始 | 下一步进入 RAG 工程 |
+| 求职资产完成度 | 模块 1 基础 Demo、模块 2 结构化输出与工具调用 Demo、模块 3 Workflow/Agent/LangGraph/Multi-Agent Demo、模块 4 可恢复 Workflow Demo 已完成 | 继续沉淀模块 5 知识库问答能力 |
 
 ## 风险与纠偏清单
 
@@ -107,12 +120,12 @@
 
 | 资产 | 目标用途 | 来源模块 | 当前状态 |
 | --- | --- | --- | --- |
-| AI 应用核心 Demo 集 | 证明工程能力 | 模块 1-7 | 进行中：模块 1、模块 2 Demo 已完成 |
+| AI 应用核心 Demo 集 | 证明工程能力 | 模块 1-7 | 进行中：模块 1、模块 2、模块 3、模块 4 Demo 已完成 |
 | ProductCraft AI 项目 | 作为主项目作品集 | 模块 8 | 未开始 |
 | AI PDF 助手项目表达 | 作为已有项目补充案例 | 模块 8-9 | 待整理 |
 | 项目 README | 面试官快速了解项目 | 模块 8 | 未开始 |
 | 技术亮点文档 | 简历和面试表达 | 模块 8-9 | 未开始 |
-| 高频面试题库 | 面试准备 | 模块 1-9 | 进行中：模块 1、模块 2 已覆盖 |
+| 高频面试题库 | 面试准备 | 模块 1-9 | 进行中：模块 1、模块 2、模块 3、模块 4 已覆盖 |
 | 简历 AI 应用开发版本 | 投递 20k+ 岗位 | 模块 9 | 未开始 |
 | 投递清单 | 岗位机会管理 | 模块 9 | 未开始 |
 
@@ -126,12 +139,15 @@
 | Tool Calling Demo | 模块 2 | `/Users/elvis/Desktop/21DaysLLMLearning/demo3` | 已完成 | searchCompetitors、saveProject、工具调用日志、工具错误展示 |
 | 模块 2 学习归档 | 模块 2 | `/Users/elvis/Documents/Codex/2026-06-14/module-2-structured-output-tool-calling/outputs/module-2-export.md` | 已完成 | 完整学习归档 |
 | 模块 2 一页纸速记 | 模块 2 | `/Users/elvis/Documents/Codex/2026-06-14/module-2-structured-output-tool-calling/outputs/module-2-cheatsheet.md` | 已完成 | 速记版 |
-| Workflow Demo | 模块 3 | 待提交 | 未开始 |  |
-| Agent 小功能 | 模块 3 | 待提交 | 未开始 |  |
-| LangGraph 最小 Demo | 模块 3 | 待提交 | 未开始 |  |
-| Multi-Agent 协作 Demo | 模块 3 | 待提交 | 未开始 | 双 Agent 协作（分析 + 执行） |
-| 状态保存 Demo | 模块 4 | 待提交 | 未开始 |  |
-| 可恢复流程 Demo | 模块 4 | 待提交 | 未开始 |  |
+| Workflow Demo | 模块 3 | `/Users/elvis/Desktop/21DaysLLMLearning/demo4` | 已完成 | `workflow-core.ts`、输入/抽取/分析/生成/校验/条件路由/受控修正 |
+| Agent 小功能 | 模块 3 | `/Users/elvis/Desktop/21DaysLLMLearning/demo4` | 已完成 | 基于结果的 Agent 问答，当前为学习型可视化 Demo |
+| LangGraph 最小 Demo | 模块 3 | `/Users/elvis/Desktop/21DaysLLMLearning/demo4` | 已完成 | `langgraph-minimal.ts`，`npm run langgraph` 通过 |
+| Multi-Agent 协作 Demo | 模块 3 | `/Users/elvis/Desktop/21DaysLLMLearning/demo4` | 已完成 | 规则版分析 Agent + 执行 Agent，`npm run test:multi-agent` 通过 |
+| 模块 3 Next 可视化页面 | 模块 3 | `/Users/elvis/Desktop/21DaysLLMLearning/demo4` | 已完成 | `app/page.tsx`、`app/api/demo/route.ts`，本地页面 `http://localhost:3000` |
+| 状态保存 Demo | 模块 4 | `/Users/elvis/Desktop/21DaysLLMLearning/demo5` | 已完成 | UI State、Model Messages、Agent State、Checkpoint 区分；接入 AI SDK + DeepSeek |
+| 可恢复流程 Demo | 模块 4 | `/Users/elvis/Desktop/21DaysLLMLearning/demo5` | 已完成 | threadId、currentNode、status、state、Resume、Approve/Reject/Edit 路由 |
+| 模块 4 可视化页面 | 模块 4 | `/Users/elvis/Desktop/21DaysLLMLearning/demo5` | 已完成 | checkpoint 展示、HITL 操作、历史记录 |
+| 模块 4 文档产出 | 模块 4 | `/Users/elvis/Desktop/21DaysLLMLearning/demo5` | 已完成 | `STATE_DESIGN.md`、`CHECKPOINT_HITL_FLOW.md`、`MODULE_4_SUMMARY.md` |
 | RAG 问答 Demo | 模块 5 | 待提交 | 未开始 |  |
 | Chunking 策略对比文档 | 模块 5 | 待提交 | 未开始 | 固定/语义/递归分块 |
 | 向量库选型说明 | 模块 5 | 待提交 | 未开始 | Pinecone / pgvector / Chroma 等 |
@@ -154,8 +170,8 @@
 | --- | --- | --- | --- | --- |
 | 模块 1 | LLM 调用、AI SDK、Streaming | 已覆盖 | 已完成 | 覆盖调用链路、messages、无状态、UIMessage/ModelMessage、streamText、SSE、Abort、错误/超时/重试、Token/成本、Provider/模型切换 |
 | 模块 2 | Structured Output、Tool Calling | 已覆盖 | 已完成 | Structured Output 8 小节、Tool Calling 10 小节已完成 |
-| 模块 3 | Workflow、Agent、ReAct、LangGraph、Multi-Agent | 0 | 未开始 |  |
-| 模块 4 | State、Persistence、Checkpoint、HITL | 0 | 未开始 |  |
+| 模块 3 | Workflow、Agent、ReAct、LangGraph、Multi-Agent | 已覆盖 | 已完成 | Workflow、Agent、LangGraph、Multi-Agent、Prompt 策略、项目表达已完成 |
+| 模块 4 | State、Persistence、Checkpoint、HITL | 已覆盖 | 已完成 | 严格理解验收、项目设计题、项目表达、高频面试题已完成 |
 | 模块 5 | RAG 工程、Chunking 策略、向量库选型、检索质量、上下文构造 | 0 | 未开始 |  |
 | 模块 6 | Memory、Guardrails、安全边界、Prompt Injection | 0 | 未开始 |  |
 | 模块 7 | Observability、Evals、请求治理、MCP、CI/CD for AI、Agent Skills | 0 | 未开始 | Agent Skills 放在 MCP 后补充 |
@@ -168,8 +184,8 @@
 | --- | --- | --- | --- |
 | 能独立接入 LLM 与 AI SDK | 模块 1 | 最小调用 Demo、Streaming Chat Demo、模块 1 总结 | 已完成 |
 | 能实现结构化输出与工具调用 | 模块 2 | Structured Output Demo、Tool Calling Demo、模块 2 总结 | 已完成 |
-| 能设计 AI 工作流、Agent 和 Multi-Agent 协作 | 模块 3 | Workflow Demo、Agent 小功能、LangGraph Demo、Multi-Agent 协作 Demo | 未开始 |
-| 能处理多轮状态、持久化和人工介入 | 模块 4 | 状态保存 Demo、可恢复流程 Demo、状态设计文档 | 未开始 |
+| 能设计 AI 工作流、Agent 和 Multi-Agent 协作 | 模块 3 | Workflow Demo、Agent 小功能、LangGraph Demo、Multi-Agent 协作 Demo | 已完成 |
+| 能处理多轮状态、持久化和人工介入 | 模块 4 | 状态保存 Demo、可恢复流程 Demo、状态设计文档、Checkpoint/HITL 流程文档 | 已完成 |
 | 能实现知识库问答和 RAG 工程（含 Chunking 与向量库） | 模块 5 | 文档切分 Demo、Chunking 策略对比、向量库选型、RAG 问答 Demo、检索质量记录 | 未开始 |
 | 能处理记忆、安全边界、Prompt Injection 防护和输出约束 | 模块 6 | Memory Demo、Guardrails Demo（含注入防护）、策略文档 | 未开始 |
 | 有评估、观测、请求治理、CI/CD 和工具生态意识 | 模块 7 | Eval 用例、观测记录、Rate Limiting 说明、MCP 接入 Demo、CI/CD for AI 说明、Agent Skills 最小技能包 | 未开始 |
@@ -268,8 +284,8 @@
 | --- | --- | --- | --- | --- |
 | 模块 1 | LLM 与 AI SDK 核心基础 | 已完成 | Day 1-2 | 已通过模块验收 |
 | 模块 2 | Structured Output 与 Tool Calling | 已完成 | Day 3-4 | 已通过模块验收 |
-| 模块 3 | Workflow、Agent、LangGraph 与 Multi-Agent | 未开始 | Day 5-7 | Day 6 阶段验收 |
-| 模块 4 | State、Persistence、Checkpoint、Human-in-the-loop | 未开始 | Day 8-9 | Day 9 阶段验收 |
+| 模块 3 | Workflow、Agent、LangGraph 与 Multi-Agent | 已完成 | Day 5-7 | 已通过模块验收 |
+| 模块 4 | State、Persistence、Checkpoint、Human-in-the-loop | 已完成 | Day 8-9 | 已通过模块验收 |
 | 模块 5 | RAG 工程（Chunking、向量库、Hybrid Search） | 未开始 | Day 10-12 | Day 12 阶段验收 |
 | 模块 6 | Memory、Guardrails 与 Prompt Injection | 未开始 | Day 13-14 | Day 15 阶段验收 |
 | 模块 7 | Observability、Evals、MCP、CI/CD for AI 与 Agent Skills | 未开始 | Day 15-16 | Day 15 阶段验收 |
@@ -282,8 +298,8 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 模块 1 | 通过 | 通过 | 通过 | 通过 | 通过 | 通过 | 已完成 |
 | 模块 2 | 通过 | 通过 | 通过 | 通过 | 通过 | 通过 | 已完成 |
-| 模块 3 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未开始 |
-| 模块 4 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未开始 |
+| 模块 3 | 通过 | 通过 | 通过 | 通过 | 通过 | 通过 | 已完成 |
+| 模块 4 | 通过 | 通过 | 通过 | 通过 | 通过 | 通过 | 已完成 |
 | 模块 5 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未开始 |
 | 模块 6 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未开始 |
 | 模块 7 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未验收 | 未开始 |
@@ -307,8 +323,8 @@
 | --- | --- | --- | --- | --- |
 | 模块 1 | 最小调用 Demo、Streaming Chat Demo | 模块 1 总结 | 基础调用与 Streaming 高频题 | 证明能独立搭建 LLM 应用入口 |
 | 模块 2 | Structured Output Demo、Tool Calling Demo | 模块 2 总结、学习归档、一页纸速记 | Schema、工具调用、错误处理、工具边界高频题 | 证明能做稳定的 AI 功能接口 |
-| 模块 3 | Workflow Demo、Agent 小功能、LangGraph 最小 Demo、Multi-Agent 协作 Demo | Agent 流程图、Multi-Agent 模式说明、Prompt 策略要点与模块 3 总结 | Agent、ReAct、Workflow、Multi-Agent、Prompt 设计高频题 | 证明能设计多步骤 AI 工作流和 Multi-Agent 协作 |
-| 模块 4 | 状态保存 Demo、可恢复流程 Demo | 状态设计文档、模块 4 总结 | State、Checkpoint、HITL 高频题 | 证明能处理真实业务流程连续性 |
+| 模块 3 | Workflow Demo、Agent 小功能、LangGraph 最小 Demo、Multi-Agent 协作 Demo、Next 可视化页面 | Agent 流程图、Multi-Agent 模式说明、Prompt 策略要点与模块 3 总结 | Agent、ReAct、Workflow、LangGraph、Multi-Agent、Prompt 设计高频题 | 证明能设计多步骤 AI 工作流和 Multi-Agent 协作 |
+| 模块 4 | 状态保存 Demo、可恢复流程 Demo、Checkpoint/HITL 可视化页面 | `STATE_DESIGN.md`、`CHECKPOINT_HITL_FLOW.md`、`MODULE_4_SUMMARY.md` | State、Persistence、Checkpoint、HITL 高频题、项目设计题、项目表达 | 证明能处理真实业务流程连续性、恢复和人工介入 |
 | 模块 5 | 文档切分检索 Demo、RAG 问答 Demo | 检索质量记录、模块 5 总结 | RAG 工程高频题 | 证明能实现知识库问答类项目 |
 | 模块 6 | Memory Demo、Guardrails Demo（含 Prompt Injection 防护） | 记忆策略文档、安全策略文档、模块 6 总结 | Memory、Guardrails、Prompt Injection 高频题 | 证明能处理个性化、安全边界和注入防护 |
 | 模块 7 | Eval 用例、观测记录、Rate Limiting 说明、MCP 接入 Demo、CI/CD for AI 说明、Agent Skills 最小技能包 | 模块 7 总结 | Evals、Observability、MCP、CI/CD for AI、Agent Skills 高频题 | 证明有工程质量、请求治理、CI/CD 和可复用 Agent 能力组织能力 |
@@ -347,8 +363,8 @@
 | --- | --- | --- | --- | --- | --- |
 | Day 1 | 已完成 | `/Users/elvis/Desktop/21DaysLLMLearning/part1` | 模块 1 学习笔记、复盘、面试表达草稿 | 已复盘 | 模块 1 已完成，下一步进入模块 2 |
 | Day 2 | 已完成 | `/Users/elvis/Desktop/21DaysLLMLearning/demo2`；`/Users/elvis/Desktop/21DaysLLMLearning/demo3` | 模块 2 学习归档、速记版、面试表达 | 已复盘 | 模块 2 已完成，下一步进入模块 3 |
-| Day 3 | 未开始 | 待提交 | 待提交 | 待复盘 | 阶段验收日 |
-| Day 4 | 未开始 | 待提交 | 待提交 | 待复盘 |  |
+| Day 3 | 已完成 | `/Users/elvis/Desktop/21DaysLLMLearning/demo4` | Agent 流程图、Multi-Agent 模式说明、Prompt 策略要点、模块 3 总结、面试题与项目表达 | 已复盘 | 模块 3 已完成，下一步进入模块 4；最终改动后 `npm run build` 未复验 |
+| Day 4 | 已完成 | `/Users/elvis/Desktop/21DaysLLMLearning/demo5` | `STATE_DESIGN.md`、`CHECKPOINT_HITL_FLOW.md`、`MODULE_4_SUMMARY.md`、高频面试题、项目设计题、项目表达 | 已复盘 | 模块 4 已完成，下一步进入模块 5 |
 | Day 5 | 未开始 | 待提交 | 待提交 | 待复盘 |  |
 | Day 6 | 未开始 | 待提交 | 待提交 | 待复盘 | 阶段验收日 |
 | Day 7 | 未开始 | 待提交 | 待提交 | 待复盘 |  |
@@ -373,8 +389,8 @@
 | --- | --- | --- | --- | --- | --- |
 | Day 1 | 完成模块 1 核心概念学习、AI SDK Demo、DeepSeek API/模型接入、Streaming、停止生成、错误提示、状态展示、模型配置抽离 | 无结构性未完成；后续在项目中继续熟练 AI SDK 具体 API | `/Users/elvis/Desktop/21DaysLLMLearning/part1` | 需继续围绕真实 Demo 练习面试表达 2-3 遍 | 进入模块 2：Structured Output 与 Tool Calling |
 | Day 2 | 完成 Structured Output Demo、Tool Calling Demo、ProductBrief Zod Schema、工具调用日志、工具错误展示、模块 2 学习归档 | 无结构性未完成；后续在模块 3 中把 Structured Output 和 Tool Calling 放进可控 Workflow | demo2：`/Users/elvis/Desktop/21DaysLLMLearning/demo2`；demo3：`/Users/elvis/Desktop/21DaysLLMLearning/demo3` | 需继续在 Workflow 中练习工具调用边界、参数校验、副作用控制和日志表达 | 进入模块 3：Workflow、Agent、LangGraph 与 Multi-Agent |
-| Day 3 | 待记录 | 待记录 | 待记录 | 待记录 | 待记录 |
-| Day 4 | 待记录 | 待记录 | 待记录 | 待记录 | 待记录 |
+| Day 3 | 完成 Workflow Demo、Agent 小功能、LangGraph 最小 Demo、Multi-Agent 协作 Demo、Next 可视化页面、模块 3 总结、高频面试题与项目表达 | 最终改动后 `npm run build` 未再次完成验证；Persistence、Checkpoint、HITL 留到模块 4 | `/Users/elvis/Desktop/21DaysLLMLearning/demo4` | 需在模块 4 中继续练习状态持久化、可恢复流程和人工介入；模块 3 的 Multi-Agent 当前为规则版，未接 LLM | 进入模块 4：State、Persistence、Checkpoint、Human-in-the-loop |
+| Day 4 | 完成可恢复 AI Workflow Demo、AI SDK + DeepSeek 接入、checkpoint 展示、HITL 操作、历史记录、State 设计文档、Checkpoint/HITL 流程文档、模块总结、高频面试题、项目设计题、项目表达、严格理解验收 | 无结构性未完成；模块 5 尚未开始 | `/Users/elvis/Desktop/21DaysLLMLearning/demo5` | 后续在模块 5 中重点补 RAG 工程、Chunking、向量库选型、检索质量与上下文构造 | 进入模块 5：RAG 工程（Chunking、向量库、Hybrid Search） |
 | Day 5 | 待记录 | 待记录 | 待记录 | 待记录 | 待记录 |
 | Day 6 | 待记录 | 待记录 | 待记录 | 待记录 | 待记录 |
 | Day 7 | 待记录 | 待记录 | 待记录 | 待记录 | 待记录 |
@@ -395,14 +411,15 @@
 
 ## 当前日台账
 
-- 当前第几天：Day 2
-- 当前模块：模块 3：Workflow、Agent、LangGraph 与 Multi-Agent
+- 当前第几天：Day 4
+- 当前模块：模块 5：RAG 工程（Chunking、向量库、Hybrid Search）
 - 当前模块状态：未开始，下一步进入
-- 今日目标：模块 2 已完成；下一步开始 Workflow、Agent 与 LangGraph
+- 今日目标：模块 4 已完成；下一步开始 RAG 工程
 - 今日必须产出的代码或文档：
-  - 模块 3 诊断/学习入口
-  - Workflow / Agent 选择说明
-  - LangGraph State 最小设计
+  - 模块 5 学习诊断/入口
+  - Chunking 策略对比说明
+  - 向量库选型说明
+  - RAG 最小问答 Demo 设计
 
 ## 文档收口状态
 
@@ -442,12 +459,12 @@
 
 | 项目 | 当前值 |
 | --- | --- |
-| 当前状态 | Day 2 已完成，模块 1、模块 2 已完成，准备进入模块 3 |
-| 已完成模块 | 2 / 9 |
-| 已完成日复盘 | 2 / 21 |
-| 当前最关键缺口 | 模块 3 尚未开始 |
-| 当前不能做的事 | 不能跳过模块 3 直接进入模块 4 |
-| 下一次收到汇报后优先检查 | 是否包含模块 3 Workflow、Agent、LangGraph 的诊断、代码、运行证明或练习结果 |
+| 当前状态 | Day 4 已完成，模块 1、模块 2、模块 3、模块 4 已完成，准备进入模块 5 |
+| 已完成模块 | 4 / 9 |
+| 已完成日复盘 | 4 / 21 |
+| 当前最关键缺口 | 模块 5 尚未开始 |
+| 当前不能做的事 | 不能跳过模块 5 直接进入模块 6 |
+| 下一次收到汇报后优先检查 | 是否包含模块 5 RAG、Chunking、向量库、检索质量、上下文构造的诊断、代码、运行证明或练习结果 |
 
 ## 下一次汇报接收区
 
@@ -522,17 +539,18 @@
 
 | 优先级 | 行动 | 所属模块 | 需要的证据 | 状态 |
 | --- | --- | --- | --- | --- |
-| P0 | 开始模块 3：Workflow、Agent、LangGraph 与 Multi-Agent | 模块 3 | 诊断结果、Workflow/Agent 选择说明、State 最小设计 | 待开始 |
-| P0 | 完成模块 3 LangGraph State 最小 Demo | 模块 3 | 代码路径、运行证明、State/Node/Edge 说明 | 待提交 |
-| P1 | 将模块 2 Structured Output 和 Tool Calling 放进可控 Workflow | 模块 3 | Workflow 设计草图或说明 | 待提交 |
-| P1 | 继续明确企业级 AI 应用主项目方向 | 模块 3/后续项目 | ProductCraft、AI PDF 助手或其他企业级 AI 应用方向 | 待确认 |
+| P0 | 开始模块 5：RAG 工程（Chunking、向量库、Hybrid Search） | 模块 5 | 诊断结果、RAG 最小链路说明、Chunking/向量库初步选择 | 待开始 |
+| P0 | 完成模块 5 文档切分 Demo | 模块 5 | 代码路径、运行证明、固定/语义/递归分块对比 | 待提交 |
+| P0 | 完成模块 5 RAG 问答 Demo | 模块 5 | 代码路径、运行证明、检索质量记录 | 待提交 |
+| P1 | 完成模块 5 向量库选型说明 | 模块 5 | Pinecone / pgvector / Chroma 等对比与项目选择理由 | 待提交 |
+| P1 | 继续明确企业级 AI 应用主项目方向 | 模块 5/后续项目 | ProductCraft、AI PDF 助手或其他企业级 AI 应用方向 | 待确认 |
 | P2 | 记录新增扩展知识 | 当前主线外 | 扩展知识名称、为什么暂不处理 | 暂无 |
 
 ## 阶段验收安排
 
 | 验收日 | 验收范围 | 输出 |
 | --- | --- | --- |
-| Day 3 | 模块 1，模块 2 前半 | 阶段验收记录、薄弱点清单、纠偏建议 |
+| Day 3 | 模块 1、模块 2、模块 3 已提交成果 | 阶段验收记录、薄弱点清单、纠偏建议 |
 | Day 6 | 模块 2，模块 3 前半 | 阶段验收记录、可运行 Demo 检查 |
 | Day 9 | 模块 3，模块 4 | 阶段验收记录、Agent/State 能力检查 |
 | Day 12 | 模块 5 | RAG 工程验收记录 |
@@ -544,21 +562,21 @@
 
 ### Day 3 阶段验收
 
-- 验收范围：模块 1，模块 2 前半
-- 当前状态：未到验收日
-- 已通过项：待记录
-- 未通过项：待记录
-- 需要回补：待记录
-- 是否调整后续节奏：待记录
+- 验收范围：模块 1、模块 2、模块 3 当前已提交成果
+- 当前状态：已完成
+- 已通过项：模块 1、模块 2、模块 3 均满足核心概念、项目代码、功能运行、练习、章节总结、高频面试题要求
+- 未通过项：无阻塞项
+- 需要回补：模块 3 最终改动后 `npm run build` 未再次完成验证，作为 P1 回补项记录
+- 是否调整后续节奏：可进入模块 4；Persistence、Checkpoint、HITL 不在模块 3 展开，按计划进入模块 4
 
 ### Day 6 阶段验收
 
 - 验收范围：模块 2，模块 3 前半
-- 当前状态：未到验收日
-- 已通过项：待记录
-- 未通过项：待记录
-- 需要回补：待记录
-- 是否调整后续节奏：待记录
+- 当前状态：模块 2、模块 3、模块 4 已提前完成，Day 6 到达时复核模块 5 进展
+- 已通过项：模块 2、模块 3、模块 4 已通过模块验收
+- 未通过项：待 Day 6 复核
+- 需要回补：无当前阻塞；模块 5 尚未开始
+- 是否调整后续节奏：暂不调整固定模块顺序
 
 ### Day 9 阶段验收
 
@@ -719,3 +737,7 @@
 | 2026-06-15 | 在模块 7 的 MCP 后补充 Agent Skills 学习与最小技能包产出 |
 | 2026-06-15 | 根据学习回传更新模块 2 为已完成，记录 Structured Output、Tool Calling、测试、归档、练习与面试表达，下一步进入模块 3 |
 | 2026-06-15 | 模块 3 补充 Multi-Agent 协作模式、Prompt 策略要点；模块 5 补充 Chunking 策略与向量库选型；模块 6 补充 Prompt Injection 防护；模块 7 补充 Rate Limiting 与 CI/CD for AI |
+| 2026-06-16 | 根据学习回传更新模块 3 为已完成，记录 Workflow、Agent、LangGraph、Multi-Agent、Next 可视化页面、验证命令与 build 未复验回补项，下一步进入模块 4 |
+| 2026-06-17 | 后续模块学习窗口统一参考 Teach skill 教学方式：小目标、小练习、代码落点、面试表达和严格验收 |
+| 2026-06-17 | 后续模块提高理解验收标准：必须能用自己的话解释、判断场景、说明误区并完成练习，不能只靠听懂或复述术语过关 |
+| 2026-06-17 | 根据学习回传更新模块 4 为已完成，记录 demo5、AI SDK + DeepSeek、Checkpoint/HITL 可视化、三份文档、测试构建通过和严格理解验收，下一步进入模块 5 |
