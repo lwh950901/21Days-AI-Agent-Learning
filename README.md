@@ -11,7 +11,7 @@
 | 1 | **LLM 与 AI SDK 核心基础** | Day 1-2 | ✅ 已完成 |
 | 2 | Structured Output 与 Tool Calling | Day 3-4 | ✅ 已完成 |
 | 3 | Workflow、Agent、LangGraph 与 Multi-Agent | Day 5-7 | ✅ 已完成 |
-| 4 | State、Persistence、Checkpoint、HITL | Day 8-9 | ⬜ 未开始 |
+| 4 | State、Persistence、Checkpoint、HITL | Day 8-9 | ✅ 已完成 |
 | 5 | RAG 工程 | Day 10-12 | ⬜ 未开始 |
 | 6 | Memory 与 Guardrails | Day 13-14 | ⬜ 未开始 |
 | 7 | Observability、Evals 与 MCP | Day 15-16 | ⬜ 未开始 |
@@ -165,3 +165,39 @@
 2. **Conditional Edge + Loop**：质量检查不通过时通过条件边进入修正，`maxRetries` 防止无限循环，控制成本和失败边界
 3. **ReAct 边界**：模型选择工具 ≠ 模型执行工具。Act 是代码执行，Observation 是工具结果，Final Answer 基于 Observation
 4. **Multi-Agent 设计**：只在职责天然不同时拆分。analysisAgent 负责语义理解（接 LLM），executorAgent 执行白名单工具（纯代码），LLM 不可用时规则兜底
+
+---
+
+## 模块 4 完成概要 ✅
+
+> 📄 [完整学习归档](module-4.md) · [一页纸速记版](module-4-fast.md) · 💻 [Demo 代码](demo5/)
+
+### 学习内容
+
+- **Agent State**：业务数据建模（idea / clarifiedRequirements / prdDraft / approvalStatus / humanFeedback），与 UI 状态严格分离
+- **Checkpoint**：文件持久化快照，包含 threadId、currentNode、nextNode、status、完整 State、时间戳
+- **threadId**：每个可恢复工作流实例的唯一标识，恢复时通过 threadId 加载 checkpoint
+- **Resume**：加载 checkpoint → 写入人工决策 → 路由到下一节点，不是重新开始
+- **HITL**：人在关键节点介入，审批/退回/编辑 写入结构化 State，形成完整审计链
+- **AI 节点**：模型调用是 Workflow 的一个节点，输入来自 State，输出写回 State，再次 checkpoint
+
+### 代码产出
+
+[demo5/](demo5/) — ProductCraft 可恢复 AI 工作流控制台
+
+| 能力 | 技术实现 |
+| --- | --- |
+| Checkpoint 存储 | `node:fs/promises` 文件存储，`saveCheckpoint` / `loadCheckpoint` |
+| HITL 三路审批 | approve（完结） / reject（退回需求） / edit（修改后重新生成 PRD） |
+| DeepSeek 集成 | AI SDK `generateText`，集中 `model.ts` 管理配置 |
+| 可视化页面 | 5 步 timeline + Learning context 面板 + Checkpoint 变更历史 |
+| 状态中文化 | `STATUS_LABELS` / `NODE_LABELS` 抽离为独立 `labels.ts` |
+| API key 检查 | 未配置时返回 422 + 中文提示，不抛 500 |
+| 测试 | 5 个 Node test，使用 `tmpdir` 隔离，不消耗 token |
+
+### 面试表达
+
+1. **Checkpoint 设计**：每个 checkpoint 包含 threadId + State 快照 + 路由位置 + 状态，序列化落盘，任何时刻可恢复
+2. **HITL 安全边界**：AI 生成完不直接发布，暂停等人确认。人的决策（批准/退回/编辑）写进 State，形成审计链
+3. **AI 节点封装**：模型调用和手写逻辑平等对待——都是 Workflow 节点，输入输出都在 State 中，可追踪可恢复
+4. **Resume 不是重跑**：恢复的是上次暂停的节点位置 + 完整 State，从断点继续，不浪费 token
