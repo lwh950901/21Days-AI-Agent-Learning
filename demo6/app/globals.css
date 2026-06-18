@@ -1,0 +1,564 @@
+:root {
+  --ink: #0e1117;
+  --paper: #f8f9fb;
+  --panel: #ffffff;
+  --line: #dde0e4;
+  --line-strong: #c2c7ce;
+  --accent: #1a6ff5;
+  --accent-glow: rgba(26, 111, 245, 0.12);
+  --accent-soft: #ebf2fe;
+  --success: #0ea371;
+  --warn: #e88c2f;
+  --muted: #5e6775;
+  --muted-light: #8b929e;
+  --code-bg: #f1f3f6;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(26, 111, 245, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(14, 163, 113, 0.02) 0%, transparent 50%),
+    linear-gradient(180deg, #f8f9fb 0%, #f3f5f8 100%);
+  font-family: "IBM Plex Sans", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* ── Shell ── */
+
+.shell {
+  min-height: 100vh;
+  padding: 36px;
+}
+
+/* ── Hero ── */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 28px;
+  align-items: end;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  max-width: 780px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── Status ribbon ── */
+
+.status-ribbon {
+  display: grid;
+  gap: 2px;
+  padding: 20px 22px;
+  background: var(--ink);
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), var(--shadow-md);
+  align-content: center;
+}
+
+.status-ribbon span,
+.learning-strip span {
+  color: var(--muted-light);
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.status-ribbon strong {
+  color: #ffffff;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* ── Learning strip ── */
+
+.learning-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--line);
+  box-shadow: var(--shadow-sm);
+  margin-top: 20px;
+}
+
+/* ── Workbench ── */
+
+.workbench {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+/* ── Control panel ── */
+
+.control-panel {
+  align-self: start;
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.control-panel label {
+  display: grid;
+  gap: 6px;
+  color: var(--ink);
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--code-bg);
+  color: var(--ink);
+  padding: 10px 12px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+textarea {
+  min-height: 280px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* ── Toggles & radio ── */
+
+.toggle {
+  grid-template-columns: 16px 1fr !important;
+  align-items: center;
+  gap: 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-family: "IBM Plex Sans", "SF Pro Text", sans-serif !important;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.strategy-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.radio-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 5px !important;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  font-family: "IBM Plex Sans", "SF Pro Text", sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.radio-label:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.radio-label input {
+  width: 13px;
+  height: 13px;
+  accent-color: var(--accent);
+}
+
+/* ── Buttons ── */
+
+button {
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 12px 16px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+button:hover:not(:disabled) {
+  background: #155dd6;
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+  line-height: 1.5;
+  border: 1px solid #fecaca;
+}
+
+/* ── Main panel ── */
+
+.main-panel {
+  min-width: 0;
+}
+
+.learning-strip > div {
+  display: grid;
+  gap: 4px;
+  background: var(--panel);
+  padding: 16px 18px;
+}
+
+.learning-strip span {
+  color: var(--muted-light);
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.learning-strip strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.learning-strip > div.highlight {
+  background: var(--accent-soft);
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+/* ── Output grid ── */
+
+.output-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+/* ── Panels ── */
+
+.panel {
+  min-width: 0;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.quality-panel {
+  margin-top: 16px;
+}
+
+pre {
+  min-height: 200px;
+  max-height: 480px;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  color: var(--ink);
+  background: var(--code-bg);
+  border-radius: 6px;
+  padding: 14px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* ── Chunk list ── */
+
+.chunk-list,
+.retrieval-list {
+  display: grid;
+  gap: 8px;
+  max-height: 480px;
+  overflow: auto;
+}
+
+.chunk,
+.hit {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 14px;
+  transition: border-color 0.15s;
+}
+
+.chunk:hover,
+.hit:hover {
+  border-color: var(--accent);
+}
+
+.chunk header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: start;
+}
+
+.chunk strong,
+.chunk span {
+  overflow-wrap: anywhere;
+}
+
+.chunk strong {
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.chunk span:not(.chunk-strategy) {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.chunk-strategy {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace !important;
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.chunk-strategy {
+  background: var(--accent-soft);
+  color: var(--accent) !important;
+}
+
+.chunk p,
+.hit p {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.hit .score-line {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ── Hit (retrieval results) ── */
+
+.hit {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.hit-score {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+}
+
+.hit-score span {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hit-score strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+/* ── Empty state ── */
+
+.empty {
+  margin: 0;
+  color: var(--muted-light);
+  font-size: 13px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Learning panel ── */
+
+.learning-panel {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.learning-panel h2 {
+  color: var(--accent);
+}
+
+.learning-panel h4 {
+  margin: 0 0 4px;
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.learning-panel > div {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(26, 111, 245, 0.12);
+}
+
+.learning-panel > div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.learning-panel p {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 980px) {
+  .shell {
+    padding: 20px;
+  }
+
+  .hero,
+  .workbench,
+  .output-grid,
+  .learning-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-ribbon {
+    border-radius: 10px;
+  }
+}
