@@ -12,7 +12,7 @@
 | 2 | Structured Output 与 Tool Calling | Day 3-4 | ✅ 已完成 |
 | 3 | Workflow、Agent、LangGraph 与 Multi-Agent | Day 5-7 | ✅ 已完成 |
 | 4 | State、Persistence、Checkpoint、HITL | Day 8-9 | ✅ 已完成 |
-| 5 | RAG 工程 | Day 10-12 | ⬜ 未开始 |
+| 5 | RAG 工程 | Day 10-12 | ✅ 已完成 |
 | 6 | Memory 与 Guardrails | Day 13-14 | ⬜ 未开始 |
 | 7 | Observability、Evals 与 MCP | Day 15-16 | ⬜ 未开始 |
 | 8 | ProductCraft 整合、部署与项目包装 | Day 17-19 | ⬜ 未开始 |
@@ -201,3 +201,40 @@
 2. **HITL 安全边界**：AI 生成完不直接发布，暂停等人确认。人的决策（批准/退回/编辑）写进 State，形成审计链
 3. **AI 节点封装**：模型调用和手写逻辑平等对待——都是 Workflow 节点，输入输出都在 State 中，可追踪可恢复
 4. **Resume 不是重跑**：恢复的是上次暂停的节点位置 + 完整 State，从断点继续，不浪费 token
+
+---
+
+## 模块 5 完成概要 ✅
+
+> 📄 [完整学习归档](module-5.md) · [一页纸速记版](module-5-fast.md) · 💻 [Demo 代码](demo6/)
+
+### 学习内容
+
+- **Chunking 策略**：fixed（固定长度）、structured（标题层级）、recursive（段落递归），三种策略对比
+- **Embedding**：SiliconFlow BGE-M3 远程嵌入 + 本地关键词哈希降级，嵌入结果磁盘缓存
+- **向量检索**：内存向量存储 + 余弦相似度 + vector / keyword / hybrid 三种搜索模式
+- **Rerank**：BGE-reranker-v2-m3 联合 query+chunk 重新打分，召回→粗筛→重排→组装四阶段 Pipeline
+- **QualityLog**：answered / low_relevance / no_chunks 三级原因分类，分阶段候选追踪
+- **Hybrid Search**：向量分 ×0.7 + 关键词分 ×0.3 融合
+
+### 代码产出
+
+[demo6/](demo6/) — RAG 工程控制台（简约科技风 UI）
+
+| 能力 | 技术实现 |
+| --- | --- |
+| Chunking | 三种策略 + 策略色标，Markdown 标题路径保留 |
+| Embedding | SiliconFlow BGE-M3 API + 本地特征哈希降级 |
+| Vector Store | 内存数组 + 余弦相似度，暴力搜索（教学目的） |
+| Hybrid Search | vector + keyword 加权融合 |
+| Reranker | BGE-reranker-v2-m3，query+chunk 联合打分 |
+| Quality Log | 四级候选追踪：recalled → filtered → reranked → selected |
+| LLM 回答 | DeepSeek 可选，RAG 上下文 + 防幻觉 prompt |
+| 测试 | 6 个 Node test（含 reranker mock），不消耗 token |
+
+### 面试表达
+
+1. **RAG Pipeline**：召回（高召回，不截断）→ 粗筛（minScore 过滤噪声）→ 重排（Reranker 精准排序）→ 组装
+2. **Chunking 选择**：fixed 适合短文本、structured 保留结构、recursive 兼顾语义完整性，大小 160-512 tokens
+3. **Rerank 价值**：召回阶段宁可多捞，Reranker 负责精准截断。topK=20 → rerank topN=5 是生产环境常见配置
+4. **QualityLog**：每个阶段都记录候选 chunk，方便排查"答案为什么不对"——是召回没捞到，还是过滤太严，还是重排排错了
